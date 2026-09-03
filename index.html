@@ -4,7 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graficación | ISC</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Fuentes modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-body: #0b0f19;
+            --surface: #111827;
+            --surface-card: #1f2937;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --accent: #38bdf8;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: #374151;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            max-width: 1080px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.7), rgba(17, 24, 39, 0.9));
+            padding: 3rem 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin: 0.3rem 0;
+        }
+
+        header p strong {
+            color: var(--text-main);
+        }
+
+        main {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .unidad-seccion {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            padding: 2.2rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .unidad-seccion h2 {
+            font-size: 1.45rem;
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .grid-actividades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tarjeta-actividad {
+            background-color: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tarjeta-actividad:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 24px -10px rgba(99, 102, 241, 0.25);
+        }
+
+        .tarjeta-actividad h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--text-main);
+        }
+
+        .tarjeta-actividad p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .btn-enlace {
+            display: inline-block;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: 6px;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-enlace:hover {
+            opacity: 0.92;
+        }
+
+        .btn-enlace:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 2rem 1.2rem;
+            }
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .unidad-seccion {
+                padding: 1.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -15,49 +179,70 @@
     </header>
 
     <main>
+        <!-- UNIDAD 1 -->
         <section class="unidad-seccion">
             <h2>Unidad 1: Introducción a los ambientes de graficación</h2>
             <div class="grid-actividades">
                 
                 <div class="tarjeta-actividad">
-                    <h3>Actividad 1.1: Primitivas</h3>
-                    <p>Modelado geométrico estático de un logotipo institucional mediante primitivas bidimensionales aplicadas en p5.js.</p>
+                    <div>
+                        <h3>Actividad 1.1: Primitivas</h3>
+                        <p>Modelado geométrico estático de un logotipo institucional mediante primitivas bidimensionales aplicadas en p5.js.</p>
+                    </div>
                     <a href="https://editor.p5js.org/JulianChi/full/p8EJ-LOfw" target="_blank" class="btn-enlace">Ver Proyecto 2D</a>
-                     <h3>Actividad 1.1: Repaso</h3>
-                    <a href="https://editor.p5js.org/JulianChi/full/jWiFAdgSW" target="_blank" class="btn-enlace">Ver Proyecto 2D</a>
-                     <h3>AA 1.2 Colores y estilos</h3>
+                </div>
+
+                <div class="tarjeta-actividad">
+                    <div>
+                        <h3>Actividad 1.1: Repaso</h3>
+                        <p>Práctica de refuerzo sobre el trazo y dimensionamiento de primitivas gráficas.</p>
+                    </div>
                     <a href="https://editor.p5js.org/JulianChi/full/jWiFAdgSW" target="_blank" class="btn-enlace">Ver Proyecto 2D</a>
                 </div>
 
                 <div class="tarjeta-actividad">
-                    <h3>Actividad 1.2: Colores</h3>
-                    <p>Aplicación de los formatos para uso de colores en el lienzo.</p>
-                    <a href="#" target="_blank" class="btn-enlace">Ver Proyecto </a>
+                    <div>
+                        <h3>AA 1.2 Colores y estilos</h3>
+                        <p>Exploración de atributos gráficos, paletas cromáticas y estilos de renderizado en el lienzo.</p>
+                    </div>
+                    <a href="https://editor.p5js.org/JulianChi/full/jWiFAdgSW" target="_blank" class="btn-enlace">Ver Proyecto 2D</a>
+                </div>
+
+                <div class="tarjeta-actividad">
+                    <div>
+                        <h3>Actividad 1.2: Colores</h3>
+                        <p>Aplicación de los formatos para uso de colores en el lienzo.</p>
+                    </div>
+                    <a href="#" target="_blank" class="btn-enlace">Ver Proyecto</a>
                 </div>
 
             </div>
         </section>
 
+        <!-- UNIDAD 2 -->
         <section class="unidad-seccion">
             <h2>Unidad 2: Graficación 2D</h2>
             <div class="grid-actividades">
                 
                 <div class="tarjeta-actividad">
-                    <h3>Actividad 2.1: Traslación</h3>
-                    <p>Implementación de transformaciones lineales (traslación y rotación) aislando la matriz gráfica mediante push() y pop().</p>
+                    <div>
+                        <h3>Actividad 2.1: Traslación</h3>
+                        <p>Implementación de transformaciones lineales (traslación y rotación) aislando la matriz gráfica mediante push() y pop().</p>
+                    </div>
                     <a href="#" target="_blank" class="btn-enlace">Ver Proyecto</a>
                 </div>
 
                 <div class="tarjeta-actividad">
-                    <h3>Actividad 2.2: Mini-Proyecto </h3>
-                    <p>Replica de un videojuego clásico aplicando Programación Orientada a Objetos, lógica de colisiones y vectores.</p>
+                    <div>
+                        <h3>Actividad 2.2: Mini-Proyecto</h3>
+                        <p>Replica de un videojuego clásico aplicando Programación Orientada a Objetos, lógica de colisiones y vectores.</p>
+                    </div>
                     <a href="#" target="_blank" class="btn-enlace">Jugar Ahora</a>
                 </div>
 
             </div>
         </section>
-
-        </main>
+    </main>
 
 </body>
 </html>
